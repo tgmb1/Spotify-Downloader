@@ -14,9 +14,9 @@ aiohttp
 aiofiles
 apscheduler
 mutagen
-pymongo[srv]==3.12.3
+pymongo
 bs4
-motor==2.5.1
+motor
 Shazamio
 youtube_search
 youtube-search-python
