@@ -1,5 +1,5 @@
 ###
-git+https://github.com/Masterolic/pyrogram.git
+pyrofork==2.3.21.post3
 tgcrypto
 lyricsgenius
 git+https://github.com/yt-dlp/yt-dlp/
