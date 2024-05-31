@@ -1,5 +1,5 @@
 ###
-pyrofork==2.3.21.post3
+https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.19.zip
 tgcrypto
 lyricsgenius
 git+https://github.com/yt-dlp/yt-dlp/
