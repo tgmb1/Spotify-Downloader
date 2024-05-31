@@ -60,7 +60,7 @@ def time_to_seconds(time):
 async def shazam(file):
     shazam = Shazam()
     try:
-        r = await shazam.recognize_song(file)
+        r = await shazam.recognize(file)
     except:
         return None, None, None
     if not r:
