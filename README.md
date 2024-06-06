@@ -55,7 +55,7 @@
 ## Config Example
 Add these variables in [config.env](https://github.com/Masterolic/Spotify-Downloader/blob/Latest/config.env):
 
-### Get `api_id` and `api_hash` from [my.telegram.org](https://my.telegram.org)
+### Get `api_id` and `api_hash` from [my.telegram.org](https://my.telegram.org) (required)
 ```sh
 API_ID = ""
 API_HASH = ""
