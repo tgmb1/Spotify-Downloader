@@ -35,6 +35,9 @@ from pyrogram import filters
 from pyrogram import Client
 #from mbot import OWNER_ID as ADMINS
 import time
+from mutagen.id3 import ID3, APIC,error
+from mutagen.easyid3 import EasyID3
+from mutagen.mp3 import MP3
 from apscheduler.schedulers.background import BackgroundScheduler
 from mbot.utils.shazam import humanbytes, edit_or_reply, fetch_audio
 NOT_SUPPORT = [ ]
@@ -82,7 +85,8 @@ async def convert_to_audio(vid_path):
 
 @Client.on_message(filters.command(["find", "shazam"] ))
 async def shazam_(client, message):
-    stime = time.time()
+    stime = getime.time()
+    sts=await message.reply_sticker("CAACAgIAAxkBATWhF2Qz1Y-FKIKqlw88oYgN8N82FtC8AAJnAAPb234AAT3fFO9hR5GfHgQ")
     msg = await message.reply_text("`Shazaming This Song.")
     if not message.reply_to_message:
         return await msg.edit("`Reply To Song File`")
@@ -99,10 +103,12 @@ async def shazam_(client, message):
         music_file = await message.reply_to_message.download()
     size_ = humanbytes(os.stat(music_file).st_size)
     dur = datetime.timedelta(seconds=dur)
-    thumb, by, title = await shazam(music_file)
+    thumbnail, by, title = await shazam(music_file)
+    if thumbnail:
+       thumb=wget.download(thumbnail)
     if title is None:
         return await msg.edit("`No Results Found.`")
-    etime = time.time()
+    etime = getime.time()
     t_k = round(etime - stime)
     caption = f"""<b><u>Shazamed Song</b></u>
     
@@ -114,6 +120,7 @@ async def shazam_(client, message):
 
 <b><u>Shazamed By @Spotify_downloa_bot</b></u>
     """
+    await sts.delete()
     if thumb:
         await msg.delete()
         await message.reply_to_message.reply_photo(thumb, caption=caption, quote=True)
@@ -121,4 +128,36 @@ async def shazam_(client, message):
         await msg.edit(caption)
     os.remove(music_file)
     if thumb:
+       path=await download_songs(title)
+       audio = EasyID3(path)
+       try:
+           audio['title']=title
+           audio['artist']=by
+       except:
+           pass
+       audio.save()
+       try:
+           audio = MP3(path, ID3=ID3)
+           audio.tags.add(APIC(mime='image/jpeg',type=3,desc=u'Cover',data=open(thumb,'rb').read()))
+           audio.save()
+       except Exception :
+           pass   
+       await message.reply_audio(path,title=title,performer=by,caption=f"{title} - {by}",thumb=thumb)
+       os.remove(path)
        os.remove(thumb)
+    else:
+         path=await download_songs(title)
+         await message.reply_audio(path,title=title,performer=by,caption=f"{title} - {by}") 
+         try:
+           audio['title']=title
+           audio['artist']=by
+         except:
+             pass
+         audio.save()
+         try:
+           audio = MP3(path, ID3=ID3)
+           audio.tags.add(APIC(mime='image/jpeg',type=3,desc=u'Cover',data=open(thumb,'rb').read()))
+           audio.save()
+         except Exception :
+           pass   
+         os.remove(path)
