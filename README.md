@@ -50,42 +50,10 @@
    docker run musicbot  
    ```
 
-## Environment Variables
-Add these variables in [config.env](https://github.com/Masterolic/Spotify-Downloader/blob/Latest/config.env):
 
-### Required Environment Variables
-- `API_ID` and `API_HASH`: Get these from [Telegram](https://my.telegram.org).
-- `BOT_TOKEN`: Get this from [@BotFather](https://t.me/BotFather).
-- `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET`: Get these from [Spotify](https://developers.spotify.com).
-
-### Optional Environment Variables
-- `LOG_GROUP`: Telegram chat ID for your log group to dump files.
-- `BUG`: Telegram chat ID to dump errors or bugs.
-- `AUTH_CHATS`: Telegram chat IDs to restrict other chats from using your bot.
-- `GENIUS_API`: Get it from [Genius](https://genius.com/developers).
-- `FIXIE_SOCKS_HOST`: Proxy URL to prevent IP block and access restricted content. If using, you can buy from there.
-- `XDG_CACHE_HOME`: Temporary file storage path (default to `~/.tmp`).
-- `F_SUB`: Pass `True` to make F_Sub enabled (default to `False`).
-- `F_SUB_CHANNEL_ID`: Channel ID username or ID that starts with `-100`.
-- `F_SUB_CHANNEL_INVITE_LINK`: Invite link to the channel (e.g., `https://t.me/username` or `https://t.me/+jwjjwjw`).
-
-## Donation
-> Please support me by buying me a pizza using the link below:
-[Buy Me A Pizza](https://www.buymeacoffee.com/Masterolic)
-
-## Feedback
-> Rate our bot [FEEDBACK](https://t.me/dailychannelsbot?start=spotify_downloa_bot)
-
-## About
-> A Simple Open Source Spotify Downloader Bot for Telegram.
-
-## Contact
-> If you need any help or want to provide feedback, don't hesitate to contact me:
-
-- [Instagram](https://instagram.com/masterolic_official)
-- [Telegram](https://t.me/Masterolic)
 
 ## Config Example
+Add these variables in [config.env](https://github.com/Masterolic/Spotify-Downloader/blob/Latest/config.env):
 
 ### Get `api_id` and `api_hash` from [my.telegram.org](https://my.telegram.org)
 ```sh
@@ -162,3 +130,19 @@ F_SUB_CHANNEL_ID = ""
 ```sh
 F_SUB_CHANNEL_INVITE_LINK = ""
 ```
+
+## Donation
+> Please support me by buying me a pizza using the link below:
+[Buy Me A Pizza](https://www.buymeacoffee.com/Masterolic)
+
+## Feedback
+> Rate our bot [FEEDBACK](https://t.me/dailychannelsbot?start=spotify_downloa_bot)
+
+## About
+> A Simple Open Source Spotify Downloader Bot for Telegram.
+
+## Contact
+> If you need any help or want to provide feedback, don't hesitate to contact me:
+
+- [Instagram](https://instagram.com/masterolic_official)
+- [Telegram](https://t.me/Masterolic)
