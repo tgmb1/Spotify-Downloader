@@ -1,4 +1,6 @@
-![Base Octocat](https://myoctocat.com/assets/images/base-octocat.svg)
+![Spotify Logo](https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg)
+
+# Spotify Downloader Bot
 
 [DEMO VERSION @Spotify_downloa_bot](https://t.me/Spotify_downloa_bot)
 
