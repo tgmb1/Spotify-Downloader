@@ -1,5 +1,3 @@
-Certainly! Here's a more user-friendly and well-organized README format for your GitHub repository:
-
 ```markdown
 ![Base Octocat](https://myoctocat.com/assets/images/base-octocat.svg)
 
