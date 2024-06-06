@@ -75,9 +75,9 @@ async def _(c, m):
         return
     try:
 	if F_SUB:
-           await Fsub(message, Mbot, user_id)
-    except (StopPropagation, ChatWriteForbidden):
-        raise StopPropagation
+	   await Fsub(message, Mbot,user_id):
+    except (StopPropagation,ChatWritrForbidden):
+	raise StopPropagation
     if message.text.startswith('/'):
         return
     elif message.text.startswith('https:'):
