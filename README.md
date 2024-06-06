@@ -1,4 +1,4 @@
-![Base Octocat](https://myoctocat.com/assets/images/base-octocat.svg)
+[Base Octocat](https://myoctocat.com/assets/images/base-octocat.svg)
 
 [DEMO VERSION @Spotify_downloa_bot](https://t.me/Spotify_downloa_bot)
 
@@ -64,6 +64,10 @@ Add these variables in [config.env](https://github.com/Masterolic/Spotify-Downlo
 - `AUTH_CHATS`: Telegram chat IDs to restrict other chats from using your bot.
 - `GENIUS_API`: Get it from [Genius](https://genius.com/developers).
 - `FIXIE_SOCKS_HOST`: Proxy URL to prevent IP block and access restricted content. If using, you can buy from there.
+- `XDG_CACHE_HOME`: Temporary file storage path (default to `~/.tmp`).
+- `F_SUB`: Pass `True` to make F_Sub enabled (default to `False`).
+- `F_SUB_CHANNEL_ID`: Channel ID username or ID that starts with `-100`.
+- `F_SUB_CHANNEL_INVITE_LINK`: Invite link to the channel (e.g., `https://t.me/username` or `https://t.me/+jwjjwjw`).
 
 ## Donation
 > Please support me by buying me a pizza using the link below:
@@ -80,3 +84,81 @@ Add these variables in [config.env](https://github.com/Masterolic/Spotify-Downlo
 
 - [Instagram](https://instagram.com/masterolic_official)
 - [Telegram](https://t.me/Masterolic)
+
+## Config Example
+
+### Get `api_id` and `api_hash` from [my.telegram.org](https://my.telegram.org)
+```sh
+API_ID = ""
+API_HASH = ""
+```
+
+### Your Telegram bot token
+```sh
+BOT_TOKEN = ""
+```
+
+### ID of the owner of the bot (not username)
+```sh
+OWNER_ID = ""
+```
+
+### Users with God permission (separate them with spaces)
+```sh
+SUDO_USERS = ""
+```
+
+### Chats that can use the bot (separate them with spaces)
+```sh
+AUTH_CHATS = ""
+```
+
+### Group ID for the log channel or leave it empty if not required
+```sh
+LOG_GROUP = ""
+```
+
+### Spotify Client Secret (get it from developers.spotify.com)
+```sh
+SPOTIPY_CLIENT_SECRET = ""
+```
+
+### Spotify Client ID (get it from developers.spotify.com)
+```sh
+SPOTIPY_CLIENT_ID = ""
+```
+
+### Add your group ID for getting error log messages or leave it empty if not required
+```sh
+BUG = ""
+```
+
+### Get it from https://genius.com/developers
+```sh
+GENIUS_API = ""
+```
+
+### Temporary file storage path
+```sh
+XDG_CACHE_HOME = "~/.tmp"
+```
+
+### Paste your proxy URL here or leave it empty if not required
+```sh
+FIXIE_SOCKS_HOST = ""
+```
+
+### Pass `True` to make F_Sub enabled (default to `False`)
+```sh
+F_SUB = False
+```
+
+### Pass channel ID username or ID that starts with `-100`
+```sh
+F_SUB_CHANNEL_ID = ""
+```
+
+### Pass the invite link to the channel (e.g., `https://t.me/username` or `https://t.me/+jwjjwjw`)
+```sh
+F_SUB_CHANNEL_INVITE_LINK = ""
+```
