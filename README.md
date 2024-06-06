@@ -55,78 +55,82 @@
 ## Config Example
 Add these variables in [config.env](https://github.com/Masterolic/Spotify-Downloader/blob/Latest/config.env):
 
+### Required Environment Variables
+
 ### Get `api_id` and `api_hash` from [my.telegram.org](https://my.telegram.org) (required)
 ```sh
 API_ID = ""
 API_HASH = ""
 ```
 
-### Your Telegram bot token
+### Your Telegram bot token (required)
 ```sh
 BOT_TOKEN = ""
 ```
 
-### ID of the owner of the bot (not username)
+### ID of the owner of the bot (not username) (required)
 ```sh
 OWNER_ID = ""
 ```
-
-### Users with God permission (separate them with spaces)
-```sh
-SUDO_USERS = ""
-```
-
-### Chats that can use the bot (separate them with spaces)
-```sh
-AUTH_CHATS = ""
-```
-
-### Group ID for the log channel or leave it empty if not required
-```sh
-LOG_GROUP = ""
-```
-
-### Spotify Client Secret (get it from developers.spotify.com)
+### Spotify Client Secret (get it from developers.spotify.com) (required)
 ```sh
 SPOTIPY_CLIENT_SECRET = ""
 ```
 
-### Spotify Client ID (get it from developers.spotify.com)
+### Spotify Client ID (get it from developers.spotify.com) (required)
 ```sh
 SPOTIPY_CLIENT_ID = ""
 ```
 
-### Add your group ID for getting error log messages or leave it empty if not required
+### Optional Environment Variables
+
+### Users with God permission (separate them with spaces) (optional)
+```sh
+SUDO_USERS = ""
+```
+
+### Chats that can use the bot (separate them with spaces) (optional)
+```sh
+AUTH_CHATS = ""
+```
+
+### Group ID for the log channel or leave it empty if not required (optional)
+```sh
+LOG_GROUP = ""
+```
+
+
+### Add your group ID for getting error log messages or leave it empty if not required (optional)
 ```sh
 BUG = ""
 ```
 
-### Get it from https://genius.com/developers
+### Get it from https://genius.com/developers (optional)
 ```sh
 GENIUS_API = ""
 ```
 
-### Temporary file storage path
+### Temporary file storage path (optional)
 ```sh
 XDG_CACHE_HOME = "~/.tmp"
 ```
 
-### Paste your proxy URL here or leave it empty if not required
+### Paste your proxy URL here or leave it empty if not required (optional)
 ```sh
 FIXIE_SOCKS_HOST = ""
 ```
 
-### Pass `True` to make F_Sub enabled (default to `False`)
+### Pass `True` to make F_Sub enabled (default to `False`) (optional)
 ```sh
 F_SUB = False
 ```
 
-### Pass channel ID username or ID that starts with `-100`
+### Pass channel ID username or ID that starts with `-100` (optional)
 ```sh
 F_SUB_CHANNEL_ID = ""
 ```
 
-### Pass the invite link to the channel (e.g., `https://t.me/username` or `https://t.me/+jwjjwjw`)
+### Pass the invite link to the channel (e.g., `https://t.me/username` or `https://t.me/+jwjjwjw`) (optional)
 ```sh
 F_SUB_CHANNEL_INVITE_LINK = ""
 ```
