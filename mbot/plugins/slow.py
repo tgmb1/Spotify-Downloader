@@ -6,7 +6,7 @@ import spotipy
 from sys import executable
 #from Script import script
 import psutil, shutil
-from pyrogram import filters,enums
+from pyrogram import filters,enums, StopPropagation 
 import os 
 #from utils import get_size
 import asyncio
@@ -20,6 +20,7 @@ from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot,AUTH_CHATS,BUG
 from os import execvp,sys , execl,environ,mkdir
 from apscheduler.schedulers.background import BackgroundScheduler
 import shutil
+from fsub import Fsub
 from spotipy.oauth2 import SpotifyClientCredentials
 #from tg import get_readable_file_size, get_readable_time
 botStartTime = time.time()
@@ -61,10 +62,21 @@ genius = Genius("api_key")
 #async def __(c, m):
 #    await foo(c, m, cb=True)
 
-## Remove & filters.private to respond in group's Also 
-@Mbot.on_message(filters.incoming & filters.text,group=3)
+##  & filters.private add this to respond only in private Chat 
+@Mbot.on_message(filters.incoming & filters.text,group=-2)
 async def _(c, m):
     message = m
+    Mbot = c
+    try:
+        user_id = message.from_user.id
+    except:
+        user_id = 5268375124         
+    if not m.text:
+        return
+    try:
+        await Fsub(message, Mbot, user_id)
+    except (StopPropagation, ChatWriteForbidden):
+        raise StopPropagation
     if message.text.startswith('/'):
         return
     elif message.text.startswith('https:'):
