@@ -1,7 +1,7 @@
 from pyrogram.errors import UserNotParticipant, PeerIdInvalid, UserIsBlocked, ChatWriteForbidden
 from pyrogram import enums, filters, StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from bot import Mbot, LOG_GROUP as BUG,F_SUB_CHANNEL,F_SUB_CHANNEL_ID, F_SUB_CHANNEL_INVITE_LINK
+from bot import Mbot, LOG_GROUP as BUG,F_SUB,F_SUB_CHANNEL_ID, F_SUB_CHANNEL_INVITE_LINK
 from requests import post 
 import traceback 
 def paste(text):
