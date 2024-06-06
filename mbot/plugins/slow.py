@@ -16,7 +16,7 @@ from pyrogram.types import CallbackQuery, Message
 #from database.users_chats_db import db as dib
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 from pyrogram.raw.functions import Ping
-from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot,AUTH_CHATS,BUG
+from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot,AUTH_CHATS,BUG,F_SUB
 from os import execvp,sys , execl,environ,mkdir
 from apscheduler.schedulers.background import BackgroundScheduler
 import shutil
@@ -74,7 +74,8 @@ async def _(c, m):
     if not m.text:
         return
     try:
-        await Fsub(message, Mbot, user_id)
+	if F_SUB:
+           await Fsub(message, Mbot, user_id)
     except (StopPropagation, ChatWriteForbidden):
         raise StopPropagation
     if message.text.startswith('/'):
