@@ -2,7 +2,7 @@ from pyrogram.errors import UserNotParticipant, PeerIdInvalid, UserIsBlocked, Ch
 from pyrogram import enums, filters, StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.users_chats_db import db
-from bot import Mbot, LOG_GROUP as BUG,F_SUB_CHANNEL,F_SUB_CHANNEL_ID
+from bot import Mbot, LOG_GROUP as BUG,F_SUB_CHANNEL,F_SUB_CHANNEL_ID, F_SUB_CHANNEL_INVITE_LINK
 from requests import post 
 import traceback 
 def paste(text):
@@ -26,7 +26,7 @@ async def Fsub(message, Mbot, user_id):
     "Pʟᴇᴀsᴇ ᴊᴏɪɴ ᴛʜᴇ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ!\n"
     "Jᴏɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴘʀᴇss ᴛʜᴇ ʀᴇғʀᴇsʜ ʙᴜᴛᴛᴏɴ.",
     reply_markup=InlineKeyboardMarkup([
-         [InlineKeyboardButton("Join Channel 📣", url="https://t.me/+Pc8XEMwZlZ9jMjc9")],
+         [InlineKeyboardButton("Join Channel 📣", url=F_SUB_CHANNEL_INVITE_LINK)],
         [InlineKeyboardButton("Refresh 🔄", callback_data="refresh")]
     ])
               )
@@ -48,7 +48,7 @@ async def Fsub(message, Mbot, user_id):
     "Pʟᴇᴀsᴇ ᴊᴏɪɴ ᴛʜᴇ ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ ᴍᴇ!\n"
     "Jᴏɪɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴘʀᴇss ᴛʜᴇ ʀᴇғʀᴇsʜ ʙᴜᴛᴛᴏɴ.",
     reply_markup=InlineKeyboardMarkup([
-        [InlineKeyboardButton("Join Channel 📣", url="https://t.me/+Pc8XEMwZlZ9jMjc9")],
+        [InlineKeyboardButton("Join Channel 📣", url=F_SUB_CHANNEL_INVITE_LINK)],
         [InlineKeyboardButton("Refresh 🔄", callback_data="refresh")]
     ])
                   )
