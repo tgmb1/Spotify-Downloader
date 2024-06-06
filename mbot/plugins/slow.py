@@ -1,4 +1,4 @@
-from pyrogram.errors import FloodWait, Forbidden, UserIsBlocked, MessageNotModified, ChatWriteForbidden, SlowmodeWait
+from pyrogram.errors import FloodWait, Forbidden, UserIsBlocked, MessageNotModified, ChatWriteForbidden, SlowmodeWait, QueryIdInvalid, PeerIdInvalid, UserNotParticipant
 from datetime import datetime
 import time
 import spotipy
@@ -223,3 +223,44 @@ async def search(Mbot: Mbot, query: CallbackQuery):
             await query.message.reply_text(f"Check out @spotify_downloa_bot(music)  @spotifynewss(News)")
         except:
             pass     
+
+@Mbot.on_callback_query(filters.regex(r"refresh"))
+async def refresh(Mbot, query):
+      try:
+          try:
+              user_id = query.from_user.id
+          except Exception:
+             return 
+          try:
+              get_member = await Mbot.get_chat_member(chat_id=-1001797516752,user_id=user_id)
+          except UserNotParticipant:
+              try:
+                  await query.answer("Please Join The Channel",show_alert=True)
+              except QueryIdInvalid:
+                  await query.message.reply("Please Join The Channel :)")
+              await query.message.stop_propagation()
+          except PeerIdInvalid:
+              try:
+                  await Mbot.send_chat_action(chat_id=user_id,action=enums.ChatAction.TYPING)
+                  get_member = await Mbot.get_chat_member(chat_id=-1001797516752,user_id=user_id)
+              except PeerIdInvalid:
+                  pass
+              except UserIsBlocked:
+                  pass
+              except UserNotParticipant:
+                  await query.answer("Please Join The Channel",show_alert=True)
+                  await query.message.stop_propagation()
+          await query.message.delete()
+          try:
+              await query.answer("Congratulations You Are  Unlocked 🤝 ",show_alert=True)
+          except:
+               pass
+          await query.message.reply("Congratulations You Had Unlocked Go Ahead 🤝 Keep The Bond With Us❣️")
+      except (StopPropagation,AttributeError):
+          pass
+      except Exception as e:
+          await Mbot.send_message(BUG, f"#Fsub refresh module Exception Raised {e}\n {paste(traceback.format_exc())}")
+          await query.message.reply('503: Sorry, We Are Unable To Procced It 🤕❣️')     
+      for var in list(locals()):
+        if var != '__name__' and var != '__doc__':
+            del locals()[var]
