@@ -1,6 +1,3 @@
-Certainly! Here's a more user-friendly and well-organized README format for your GitHub repository:
-
-```markdown
 ![Base Octocat](https://myoctocat.com/assets/images/base-octocat.svg)
 
 [DEMO VERSION @Spotify_downloa_bot](https://t.me/Spotify_downloa_bot)
@@ -83,10 +80,3 @@ Add these variables in [config.env](https://github.com/Masterolic/Spotify-Downlo
 
 - [Instagram](https://instagram.com/masterolic_official)
 - [Telegram](https://t.me/Masterolic)
-```
-
-### Key Changes
-- **Section Organization**: Structured sections with headings for easier navigation.
-- **Variable Names**: Clearly identified required and optional environment variables.
-- **Formatting**: Improved readability with consistent formatting and indentation.
-- **Detailed Comments**: Provided explanations for each section and variable for clarity.
