@@ -5,7 +5,7 @@ from mbot import Mbot, LOG_GROUP as BUG,F_SUB,F_SUB_CHANNEL_ID, F_SUB_CHANNEL_IN
 from requests import post 
 import traceback 
 def paste(text):
-    url = "https://spaceb.in/api/v1/documents/"
+    url = "https://spaceb.in/api/"
     res = post(url, data={"content": text, "extension": "txt"})
     return f"https://spaceb.in/{res.json()['payload']['id']}"
 
