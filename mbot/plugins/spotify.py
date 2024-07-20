@@ -48,7 +48,7 @@ ID - <code>{}</code>
 Name - {}
 """
 pre = []
-@Mbot.on_message(filters.incoming & filters.regex(r'https?://open.spotify.com[^\s]+') | filters.incoming & filters.regex(r'https?://spotify.link[^\s]+'), group=-2)
+@Mbot.on_message(filters.incoming & filters.regex(r'https?://open.spotify.com[^\s]+') | filters.incoming & filters.regex(r'https?://spotify.link[^\s]+'))
 async def spotify_dl(Mbot,message: Message):
     if MAIN:
        await message.reply_text(f"Bot Is Under Maintenance ⚠️")
