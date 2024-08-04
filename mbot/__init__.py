@@ -49,7 +49,7 @@ except KeyError:
     LOGGER.debug("One or More ENV variable not found.")
     sys.exit(1)
 # Optional Variable
-F_SUB = environ['F_SUB']
+F_SUB = environ.get('F_SUB',False)
 F_SUB_CHANNEL_ID = environ.get('F_SUB_CHANNEL_ID')
 F_SUB_CHANNEL_INVITE_LINK = environ.get('F_SUB_CHANNEL_INVITE_LINK')
 SUDO_USERS = environ.get("SUDO_USERS",str(OWNER_ID)).split()
