@@ -1,14 +1,9 @@
 from pyrogram.errors import UserNotParticipant, PeerIdInvalid, UserIsBlocked, ChatWriteForbidden
 from pyrogram import enums, filters, StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from mbot import Mbot, LOG_GROUP as BUG,F_SUB,F_SUB_CHANNEL_ID, F_SUB_CHANNEL_INVITE_LINK
+from mbot import Mbot, LOG_GROUP as BUG,F_SUB,F_SUB_CHANNEL_ID, F_SUB_CHANNEL_INVITE_LINK, paste
 from requests import post 
 import traceback 
-def paste(text):
-    url = "https://spaceb.in/api/"
-    res = post(url, data={"content": text, "extension": "txt"})
-    return f"https://spaceb.in/{res.json()['payload']['id']}"
-
 
 async def Fsub(message, Mbot, user_id):
       try:
