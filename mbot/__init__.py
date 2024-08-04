@@ -28,7 +28,7 @@ from sys import executable
 #from Python_ARQ import ARQ
 from aiohttp import ClientSession
 from dotenv import load_dotenv
-import shutil
+import shutil, requests 
 load_dotenv("config.env")
 import os 
 # Log
@@ -79,6 +79,20 @@ if genius_api:
 #    print(f"python arq key is not a valid string skiping it ...! Reason:{e}")
 #   aiohttpsession = ClientSession()
 #    arq = None
+def paste(text):
+    try:
+        url = "https://spaceb.in/api/"
+        res = requests.post(url, json={"content": text, "extension": "txt"})
+        return f"https://spaceb.in/{res.json()['payload']['id']}"
+    except Exception:
+        url = "https://dpaste.org/api/"
+        data={'format': 'json',
+            'content': text.encode('utf-8'),
+            'lexer': 'python',
+            'expires': '604800', #expire in week
+            }
+        res = requests.post(url,data=data)
+        return res.json()["url"]
     
 class Mbot(Client):
     def  __init__(self):
