@@ -75,7 +75,7 @@ async def _(c, m):
     if not m.text:
         return
     try:
-        if F_SUB:
+        if F_SUB == "True":
             await Fsub(message, Mbot, user_id)
     except (StopPropagation, ChatWriteForbidden):
         raise StopPropagation
