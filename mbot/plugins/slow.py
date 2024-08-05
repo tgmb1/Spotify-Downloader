@@ -15,7 +15,7 @@ from pyrogram.types import CallbackQuery, Message
 # from database.users_chats_db import db as dib
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.raw.functions import Ping
-from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot, AUTH_CHATS, BUG, F_SUB
+from mbot import LOG_GROUP, OWNER_ID, SUDO_USERS, Mbot, AUTH_CHATS, BUG, F_SUB, paste
 from os import execvp, sys, execl, environ, mkdir
 from apscheduler.schedulers.background import BackgroundScheduler
 import shutil
