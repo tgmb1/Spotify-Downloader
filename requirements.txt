@@ -1,7 +1,9 @@
-https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.19.zip
+###
+git+https://github.com/Masterolic/pyrogram.git
+#https://github.com/KurimuzonAkuma/pyrogram/archive/v2.1.19.zip
 tgcrypto
 lyricsgenius
-git+https://github.com/yt-dlp/yt-dlp.git
+git+https://github.com/yt-dlp/yt-dlp/
 git+https://github.com/coletdjnz/yt-dlp-youtube-oauth2.git
 git+https://github.com/pukkandan/yt-dlp-YTAgeGateBypass/
 python-dotenv
@@ -14,6 +16,9 @@ youtube-dl
 aiohttp
 aiofiles
 apscheduler
+Flask==2.1.2
+Werkzeug==2.1.2
+pytz==2023.3
 mutagen
 pymongo
 bs4
@@ -24,4 +29,3 @@ youtube-search-python
 Pillow
 wget
 youtube-search-python
-eyed3
