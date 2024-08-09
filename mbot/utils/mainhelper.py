@@ -240,7 +240,7 @@ def download_dez(song, download_directory='.'):
             "prefer_ffmpeg": False,
             "geo_bypass": True,
             "nocheckcertificate": True,
-            "proxy": f"socks5://{FIXIE_SOCKS_HOST}",
+            "proxy": FIXIE_SOCKS_HOST,
             "postprocessors": [{'key': 'FFmpegExtractAudio', 'preferredcodec': 'flac', 'preferredquality': '824'}],
              }
              try:
