@@ -64,7 +64,7 @@ genius = Genius("api_key")
 #     await foo(c, m, cb=True)
 
 ##  & filters.private add this to respond only in private Chat
-@Mbot.on_message(filters.incoming & filters.text, group=-1)
+@Mbot.on_message(filters.incoming & filters.text, group=-2)
 async def _(c, m):
     message = m
     Mbot = c
